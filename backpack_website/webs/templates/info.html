@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFO</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container-fluid clr1">
+      <div class="container d-flex justify-content-end align-items-center">
+          <p class="m-2">FREE DELIVERY OVER $100 ON ALL PRODUCTS</p>
+      </div>
+    </div>
+      
+      <nav class="navbar navbar-expand-md sticky-md-top bcw bs">
+          <div class="container">
+            <a class="navbar-brand" href="#"><img class="logo" src="{% static 'images/blogo.webp' %}" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+              <ul class="navbar-nav">
+                <li class="nav-item px-2">
+                  <a class="nav-link nav-my" href="index">HOMEPAGE</a>
+                </li>
+                <li class="nav-item px-2">
+                  <a class="nav-link nav-my" href="shop">SHOP</a>
+                </li>
+                <li class="nav-item px-2">
+                  <a class="nav-link nav-my" href="blog">BLOG</a>
+                </li>
+                <li class="nav-item px-2">
+                  <a class="nav-link nav-my" href="contact">CONTACT</a>
+                </li>
+                <li class="nav-item px-2">
+                  <a class="nav-link nav-my" href="account">MY ACCOUNT</a>
+                </li>
+                <li class="nav-item px-2">
+                  <a class="nav-link" href="cart">
+                    <i class="fa-solid fa-cart-shopping ion"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+
+
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 ">
+                   <div class="col-md-12">
+                    <br>
+                    <br>
+                    <br>
+                    <center>   <h4><b>USER INFORMATION</b></h4></center>
+                       <br>
+                       <br>
+                   </div>
+                   <div class="col-md-12 border">
+                    <center>
+                      <br>
+                    {% for i in data %}
+                    <h6 class="mb-3"><b>USER :</b> {{i.uname}}</h6>
+                    
+                    <h6 class="mb-3"><b>EMAIL :</b> {{i.umail}}</h6>
+                
+                    <h6 class="mb-3"><b>PHONE :</b> {{i.phn}}</h6>
+                   
+                    <h6 class="mb-3"><b>ADDRESS :</b> {{i.adrs}}</h6>
+                  
+                    {% endfor %}
+                    <br>
+                  </center>
+                   </div>
+                    
+
+                    <div class="col-md-12"></div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+
+
+
+    
+</body>
+</html>
+
+

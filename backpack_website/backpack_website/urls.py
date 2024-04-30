@@ -1,0 +1,49 @@
+"""
+URL configuration for backpack_website project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+from webs import views
+
+admin.site.site_header = 'yash chauhan'
+admin.site.index_title = 'welcome to admin panel'
+admin.site.site_title = 'admin panel'
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.index),
+    path('index', views.index),
+    path('shop',views.shop),
+    path('contact', views.contact),
+    path('blog', views.blog),
+    path('account', views.account),
+    path('sign',views.register),
+    path('submitdata',views.store),
+    path('signupdata',views.data),
+    path('cart',views.cart),
+    path('logininfo',views.linfo),
+    path('infome',views.information),
+    path('addtocart',views.cartinfo),
+    path('delete',views.delete),
+    path('update',views.update),
+    path('uptodate',views.uptodate),
+    path('forget',views.forget),
+    path('forgetpass',views.forgetpass),
+
+
+] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
